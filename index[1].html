@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="mr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#5b35d5">
+  <meta name="description" content="Digital Service App - डिजिटल सेवा, डॉक्युमेंट मेकर आणि PDF टूल्स">
+  <title>Digital Service App</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#" aria-label="Digital Service App Home">
+    <span class="brand-mark">DS</span><span><b>Digital Service App</b><small>सर्व डिजिटल सेवा एकाच ठिकाणी</small></span>
+  </a>
+  <button class="menu-btn" id="menuBtn" aria-label="मेनू">☰</button>
+  <nav id="topNav"><a href="#services">सेवा</a><a href="#documents">डॉक्युमेंट्स</a><a href="#about">माहिती</a></nav>
+</header>
+<main>
+  <section class="hero">
+    <div class="hero-copy">
+      <span class="eyebrow">आपले डिजिटल सेवा केंद्र</span>
+      <h1>सर्व डिजिटल कामे<br><em>एकाच ठिकाणी</em></h1>
+      <p>डॉक्युमेंट तयार करा, PDF साधने वापरा आणि महत्त्वाच्या सरकारी सेवांपर्यंत पोहोचा.</p>
+      <a class="primary-btn" href="#services">सेवा पाहा <span>→</span></a>
+    </div>
+    <div class="hero-art" aria-hidden="true"><div class="art-card"><span>📄</span><b>Document Maker</b><small>मराठी • English</small></div><div class="art-orbit">✦</div></div>
+  </section>
+
+  <section class="search-wrap">
+    <label class="searchbox"><span>⌕</span><input id="serviceSearch" type="search" placeholder="सेवा शोधा... उदा. रहिवासी, PDF, फोटो"></label>
+    <div class="quick-tags"><button data-filter="all">सर्व</button><button data-filter="document">डॉक्युमेंट</button><button data-filter="photo">फोटो</button><button data-filter="pdf">PDF</button><button data-filter="government">शासकीय सेवा</button></div>
+  </section>
+
+  <section id="services" class="section">
+    <div class="section-heading"><div><span class="eyebrow">EXPLORE SERVICES</span><h2>आमच्या सेवा</h2></div><span class="section-note">तुमच्या कामासाठी सोपी साधने</span></div>
+    <div id="serviceGrid" class="service-grid"></div>
+    <p id="emptyState" class="empty hidden">या नावाची सेवा सापडली नाही.</p>
+  </section>
+
+  <section id="documents" class="document-area">
+    <div class="section-heading"><div><span class="eyebrow">DOCUMENT STUDIO</span><h2>डॉक्युमेंट मेकर</h2></div></div>
+    <div class="doc-layout">
+      <div class="doc-intro"><div class="doc-icon">✍️</div><h3>रहिवासी स्वयंघोषणापत्र</h3><p>माहिती भरा आणि प्रिंटसाठी मसुदा तयार करा. डाउनलोड/प्रिंट करण्यापूर्वी सर्व माहिती तपासा.</p><ul><li>मराठी फॉर्म</li><li>थेट प्रिंट / PDF म्हणून सेव्ह</li><li>मोबाईल आणि संगणकावर वापरता येईल</li></ul><div class="notice">सूचना: हा अर्जाचा मसुदा आहे. अधिकृत प्रमाणपत्र किंवा शासनाची मंजुरी नाही.</div></div>
+      <form id="residenceForm" class="doc-form">
+        <div class="form-title"><b>अर्जदाराची माहिती</b><span>* आवश्यक माहिती</span></div>
+        <div class="form-grid">
+          <label>अर्जदाराचे पूर्ण नाव *<input name="name" required placeholder="पूर्ण नाव"></label>
+          <label>वडील / पतीचे नाव *<input name="guardian" required placeholder="पूर्ण नाव"></label>
+          <label>वय *<input name="age" type="number" min="1" max="120" required placeholder="वय"></label>
+          <label>व्यवसाय<input name="occupation" placeholder="व्यवसाय"></label>
+          <label>गाव / शहर *<input name="village" required placeholder="गावाचे नाव"></label>
+          <label>तालुका *<input name="taluka" required placeholder="तालुका"></label>
+          <label>जिल्हा *<input name="district" required placeholder="जिल्हा"></label>
+          <label>मोबाईल क्रमांक<input name="mobile" inputmode="numeric" pattern="[0-9]{10}" maxlength="10" placeholder="10 अंकी क्रमांक"></label>
+          <label class="full">संपूर्ण पत्ता *<textarea name="address" rows="2" required placeholder="घर क्रमांक, वस्ती, गाव..."></textarea></label>
+        </div>
+        <div class="form-actions"><button class="primary-btn" type="submit">डॉक्युमेंट तयार करा →</button><button class="outline-btn" type="reset">फॉर्म साफ करा</button></div>
+      </form>
+    </div>
+    <article id="previewPanel" class="preview hidden">
+      <div class="preview-head"><div><span class="eyebrow">LIVE PREVIEW</span><h3>रहिवासी स्वयंघोषणापत्र</h3></div><button id="printBtn" class="primary-btn">प्रिंट / PDF</button></div>
+      <div id="documentPreview" class="paper"></div>
+      <p class="muted">PDF साठी प्रिंट निवडा आणि Print dialog मध्ये “Save as PDF” निवडा.</p>
+    </article>
+  </section>
+
+  <section id="about" class="about">
+    <div><span class="eyebrow">DIGITAL SERVICE APP</span><h2>सोपे, जलद आणि उपयोगी</h2><p>ही सुरुवातीची आवृत्ती आहे. पुढील टप्प्यांत लॉगिन, अॅडमिन पॅनल, डेटाबेस, अधिक डॉक्युमेंट फॉर्म आणि इतर टूल्स जोडता येतील.</p></div>
+    <div class="about-stat"><b>01</b><span>सुरुवातीची कार्यरत आवृत्ती</span></div>
+  </section>
+</main>
+<footer><b>Digital Service App</b><span>© <span id="year"></span> • सर्व हक्क राखीव</span><small>सरकारी विभागाशी अधिकृत संलग्नता असल्याचा दावा नाही.</small></footer>
+<script src="app.js"></script>
+</body>
+</html>

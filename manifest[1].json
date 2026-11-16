@@ -1,0 +1,9 @@
+{
+  "name": "Digital Service App",
+  "short_name": "Digital Service",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f8f8fc",
+  "theme_color": "#5b35d5",
+  "icons": []
+}
